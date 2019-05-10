@@ -25,13 +25,13 @@ function init() {
   document.querySelector(`#name-0`).textContent = "Player 1";
   document.querySelector(`#name-1`).textContent = "Player 2";
 
-  document.querySelector(`player-0-panel`).classList.remove("winner");
-  document.querySelector(`player-1-panel`).classList.remove("winner");
+  document.querySelector(`.player-0-panel`).classList.remove("winner");
+  document.querySelector(`.player-1-panel`).classList.remove("winner");
 
-  document.querySelector(`player-0-panel`).classList.remove("active");
-  document.querySelector(`player-1-panel`).classList.remove("active");
+  document.querySelector(`.player-0-panel`).classList.remove("active");
+  document.querySelector(`.player-1-panel`).classList.remove("active");
 
-  document.querySelector(`player-0-panel`).classList.add("active");
+  document.querySelector(`.player-0-panel`).classList.add("active");
 }
 
 init();
@@ -73,6 +73,7 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
 });
 
 document.querySelector(".btn-hold").addEventListener("click", function() {
+  if (scores[activePlayer] >= 100) return;
   // add current score to global score
   scores[activePlayer] += roundScore;
   // update UI
